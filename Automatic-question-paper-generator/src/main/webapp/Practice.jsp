@@ -104,9 +104,9 @@
               <i class="fas fa-server feature-box__icon"></i>
               <h5 class="heading-tertiary">Question Management System</h5>
               <p class="feature-box__text">
-                Today people are accustomed to accessing meaningfull information
+                Today people are accustomed to accessing meaningful information
                 from a huge array of sources.. The reality is that workplace
-                learning happens continuosly in lot of differnt ways ..
+                learning happens continuously in lot of different ways ..
               </p>
             </div>
           </div>
@@ -115,7 +115,7 @@
               <i class="fas fa-database feature-box__icon"></i>
               <h5 class="heading-tertiary">Subject Management System</h5>
               <p class="feature-box__text">
-                The employee management system runs online, which alllows you to
+                The employee management system runs online, which allows you to
                 access any information from anywhere in the world at any given
                 time, as long a you have internet access.
               </p>
@@ -126,7 +126,7 @@
               <i class="fas fa-tasks feature-box__icon"></i>
               <h5 class="heading-tertiary">Course Management System</h5>
               <p class="feature-box__text">
-                Many of our UW employess have multiple records in this database,
+                Many of our UW employees have multiple records in this database,
                 either because they hold more than one job title or because
                 their salary is paid out of multiple finding sources..
               </p>
@@ -139,12 +139,12 @@
       <h5 class="contact-mail u-margin-bottom-small">
         surajsinghj654@gmail.com
       </h5>
-      <h5 class="contact-mail u-margin-bottom-small">sudeeproy164@gmail.com</h5>
+      <h5 class="contact-mail u-margin-bottom-small">roysudeep1108@gmail.com</h5>
       <h5 class="contact-number u-margin-bottom-small">8780373011</h5>
       <address class="contact-address u-margin-bottom-small">
         MANIT, Bhopal(Madhya Pradesh)
       </address>
-      <p class="copyright u-margin-bottom-small">cpoyright@2021</p>
+      <p class="copyright u-margin-bottom-small">copyright@2021</p>
     </footer>
     <div class="popup" id="popup">
       <div class="popup__content container">
