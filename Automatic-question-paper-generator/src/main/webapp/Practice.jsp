@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>easyPaper</title>
 
  <!-- Font Awesome link -->
     <script
@@ -117,7 +117,7 @@
               <p class="feature-box__text">
                 The employee management system runs online, which allows you to
                 access any information from anywhere in the world at any given
-                time, as long a you have internet access.
+                time, as long a you have Internet access.
               </p>
             </div>
           </div>
@@ -140,7 +140,6 @@
         surajsinghj654@gmail.com
       </h5>
       <h5 class="contact-mail u-margin-bottom-small">roysudeep1108@gmail.com</h5>
-      <h5 class="contact-number u-margin-bottom-small">8780373011</h5>
       <address class="contact-address u-margin-bottom-small">
         MANIT, Bhopal(Madhya Pradesh)
       </address>
@@ -151,15 +150,15 @@
         <a href="" class="popup__close">&times;</a>
         <div class="forms-container">
           <div class="signin-signup">
-            <form action="" class="sign-in-form">
+            <form action="GetsignIn" class="sign-in-form">
               <h2 class="title">Sign In</h2>
               <div class="input-field">
                 <i class="fas fa-user"></i>
-                <input type="text" placeholder="Username" />
+                <input type="text" name="email" placeholder="User email" />
               </div>
               <div class="input-field">
                 <i class="fas fa-lock"></i>
-                <input type="password" placeholder="Password" />
+                <input type="password" name="password" placeholder="Password" />
               </div>
               <input type="submit" value="Login" class="btn solid" />
             </form>
@@ -169,7 +168,7 @@
                 <i class="fas fa-user"></i>
                 <input type="text" placeholder="AdminID" />
               </div>
-              <input type="submit" value="Sign Up" class="btn solid" />
+              <input type="submit" value="Login" class="btn solid" />
             </form>
           </div>
         </div>
@@ -177,7 +176,7 @@
           <div class="panel left-panel">
             <div class="content">
               <h3>Admin?</h3>
-              <p>CLick below to Login as admin!</p>
+              <p>CLick below to Login as Admin!</p>
               <button class="btn transparent" id="sign-up-btn">Sign In</button>
             </div>
             <img src="images/sign-up-image1.svg" alt="" class="image" />
@@ -259,8 +258,8 @@
                 <label for="pinCode" class="signup-label">PinCode</label>
                 <input
                   type="number"
-                  id="pinCode"
-                  name="pinCode"
+                  id="pincode"
+                  name="pincode"
                   class="signup-input"
                 />
               </div>
