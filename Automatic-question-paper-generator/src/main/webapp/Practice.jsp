@@ -8,15 +8,20 @@
 
 <!-- Font Awesome link -->
 <script src="https://kit.fontawesome.com/7780cccd9d.js"
-	crossorigin="anonymous"></script>
+	></script>
 <!-- Google Fonts Link -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://fonts.gstatic.com" />
 <link
 	href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,300&display=swap"
 	rel="stylesheet" />
 
 <link type="text/css" rel="stylesheet" href="style.css">
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script type="text/javascript"
+	src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.0/dist/jquery.validate.min.js"></script>
+
 </head>
 <body>
 	<div class="navigation">
@@ -123,7 +128,8 @@
 			<a href="" class="popup__close">&times;</a>
 			<div class="forms-container">
 				<div class="signin-signup">
-					<form action="getUser" class="sign-in-form" method="post">
+					<form action="getUser" id="signinForm" class="sign-in-form"
+						method="post">
 						<h2 class="title">Sign In</h2>
 						<div class="input-field">
 							<i class="fas fa-user"></i> <input type="text" id="email"
@@ -133,8 +139,8 @@
 							<i class="fas fa-lock"></i> <input type="password" id="password"
 								name="password" placeholder="Password" />
 						</div>
-						<br>${message} <br>
-						<br> <input type="submit" value="Login" class="btn solid" />
+						<br>${message} <br> <br> <input type="submit"
+							value="Login" class="btn solid" />
 					</form>
 					<form action="" class="sign-up-form">
 						<h2 class="title">Sign In</h2>
@@ -232,7 +238,32 @@
       sign_in_btn.addEventListener("click", () => {
         container.classList.remove("sign-up-mode");
       });
-    </script>
+      
+    //sigin validation
+    
+    $(document).ready(function() {
+        $("#signinForm").validate({
+            rules: {
+                email: {
+                    required: true,
+                    email: true
+                },
+         
+                password: "required",
+            },
+             
+            messages: {
+                email: {
+                    required: "Please enter email",
+                    email: "Please enter a valid email address"
+                },
+                 
+                password: "Please enter password"
+            }
+        });
+ 
+    });
+</script>
 
 </body>
 </html>
