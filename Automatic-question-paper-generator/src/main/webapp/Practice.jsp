@@ -133,7 +133,8 @@
 							<i class="fas fa-lock"></i> <input type="password" id="password"
 								name="password" placeholder="Password" />
 						</div>
-						<input type="submit" value="Login" class="btn solid" />
+						<br>${message} <br>
+						<br> <input type="submit" value="Login" class="btn solid" />
 					</form>
 					<form action="" class="sign-up-form">
 						<h2 class="title">Sign In</h2>
