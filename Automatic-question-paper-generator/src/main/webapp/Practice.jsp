@@ -15,12 +15,7 @@
 <link
 	href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,300&display=swap"
 	rel="stylesheet" />
-
 <link type="text/css" rel="stylesheet" href="style.css">
-
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<script type="text/javascript"
-	src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.0/dist/jquery.validate.min.js"></script>
 
 </head>
 <body>
@@ -121,23 +116,23 @@
 		<h5 class="contact-mail u-margin-bottom-small">roysudeep1108@gmail.com</h5>
 		<address class="contact-address u-margin-bottom-small">
 			MANIT, Bhopal(Madhya Pradesh)</address>
-		<p class="copyright u-margin-bottom-small">copyright@2021</p>
+		<p class="copyright u-margin-bottom-small">copyright@2021</p>  
 	</footer>
 	<div class="popup" id="popup">
 		<div class="popup__content container">
 			<a href="" class="popup__close">&times;</a>
 			<div class="forms-container">
 				<div class="signin-signup">
-					<form action="getUser" id="signinForm" class="sign-in-form"
+					<form action="teacherHomePage.jsp" id="signinForm" class="sign-in-form"
 						method="post">
 						<h2 class="title">Sign In</h2>
 						<div class="input-field">
 							<i class="fas fa-user"></i> <input type="text" id="email"
-								name="email" placeholder="User email" />
+								name="email" placeholder="User email" required/>
 						</div>
 						<div class="input-field">
 							<i class="fas fa-lock"></i> <input type="password" id="password"
-								name="password" placeholder="Password" />
+								name="password" placeholder="Password" required/>
 						</div>
 						<br>${message} <br> <br> <input type="submit"
 							value="Login" class="btn solid" />
@@ -238,31 +233,6 @@
       sign_in_btn.addEventListener("click", () => {
         container.classList.remove("sign-up-mode");
       });
-      
-    //sigin validation
-    
-    $(document).ready(function() {
-        $("#signinForm").validate({
-            rules: {
-                email: {
-                    required: true,
-                    email: true
-                },
-         
-                password: "required",
-            },
-             
-            messages: {
-                email: {
-                    required: "Please enter email",
-                    email: "Please enter a valid email address"
-                },
-                 
-                password: "Please enter password"
-            }
-        });
- 
-    });
 </script>
 
 </body>
