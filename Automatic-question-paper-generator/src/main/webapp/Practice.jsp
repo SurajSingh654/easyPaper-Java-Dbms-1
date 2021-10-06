@@ -18,10 +18,6 @@
 
 <link type="text/css" rel="stylesheet" href="style.css">
 
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<script type="text/javascript"
-	src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.0/dist/jquery.validate.min.js"></script>
-
 </head>
 <body>
 	<div class="navigation">
@@ -88,7 +84,7 @@
 						<h5 class="heading-tertiary">Question Management System</h5>
 						<p class="feature-box__text">Today people are accustomed to
 							accessing meaningful information from a huge array of sources..
-							The reality is that workplace learning happens continuously in
+							The reality is that work place learning happens continuously in
 							lot of different ways ..</p>
 					</div>
 				</div>
@@ -128,16 +124,16 @@
 			<a href="" class="popup__close">&times;</a>
 			<div class="forms-container">
 				<div class="signin-signup">
-					<form action="getUser" id="signinForm" class="sign-in-form"
+					<form action="getUser" class="sign-in-form"
 						method="post">
 						<h2 class="title">Sign In</h2>
 						<div class="input-field">
 							<i class="fas fa-user"></i> <input type="text" id="email"
-								name="email" placeholder="User email" />
+								name="email" placeholder="User email" required/>
 						</div>
 						<div class="input-field">
 							<i class="fas fa-lock"></i> <input type="password" id="password"
-								name="password" placeholder="Password" />
+								name="password" placeholder="Password" required/>
 						</div>
 						<br>${message} <br> <br> <input type="submit"
 							value="Login" class="btn solid" />
@@ -175,7 +171,7 @@
 	<div class="popup" id="popup1">
 		<div class="popup__content popup1__content">
 			<a href="" class="popup__close">&times;</a>
-			<form class="sign1-up-form">
+			<form action="signUp" method="post" class="sign1-up-form">
 				<fieldset class="sign1-up-form__fieldset">
 					<legend class="sign1-up-form__legend">SignUp-Form</legend>
 					<div class="row-signup-form">
@@ -202,11 +198,11 @@
 					<div class="row-signup-form">
 						<div class="signup-col-1-of-2">
 							<label for="address" class="signup-label">Address</label> <input
-								type="address" id="address" name="address" class="signup-input" />
+								type="text" id="address" name="address" class="signup-input" />
 						</div>
 						<div class="signup-col-1-of-2">
 							<label for="city" class="signup-label">City</label> <input
-								type="text" id="text" name="text" class="signup-input" />
+								type="text" id="city" name="city" class="signup-input" />
 						</div>
 					</div>
 					<div class="row-signup-form">
@@ -220,7 +216,7 @@
 						</div>
 					</div>
 					<a href="#popup" class="signup-submit-btn-container">
-						<h6 class="signup-submit-btn">Submit</h6>
+						<input type="Submit" value="submit" class="signup-submit-btn"/>
 					</a>
 				</fieldset>
 			</form>
@@ -238,31 +234,6 @@
       sign_in_btn.addEventListener("click", () => {
         container.classList.remove("sign-up-mode");
       });
-      
-    //sigin validation
-    
-    $(document).ready(function() {
-        $("#signinForm").validate({
-            rules: {
-                email: {
-                    required: true,
-                    email: true
-                },
-         
-                password: "required",
-            },
-             
-            messages: {
-                email: {
-                    required: "Please enter email",
-                    email: "Please enter a valid email address"
-                },
-                 
-                password: "Please enter password"
-            }
-        });
- 
-    });
 </script>
 
 </body>

@@ -12,7 +12,7 @@
 	<b>${user.fname}</b>
 	<br>
 	<br>
-	<a href="/logout">Logout</a>
+	<a href="logout">Logout</a>
 
 </body>
 </html>
