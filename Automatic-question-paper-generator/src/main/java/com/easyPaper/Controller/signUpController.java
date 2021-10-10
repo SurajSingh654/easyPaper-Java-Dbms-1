@@ -1,6 +1,7 @@
 package com.easyPaper.Controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
@@ -48,7 +49,10 @@ public class signUpController extends HttpServlet {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-
-        response.sendRedirect("userPage.jsp");
+		PrintWriter out = response.getWriter();
+        out.println("<script type=\"text/javascript\">");
+        out.println("alert('Signed Up Successfully');");
+        out.println("location='Practice.jsp';");
+        out.println("</script>");
     }
 }
