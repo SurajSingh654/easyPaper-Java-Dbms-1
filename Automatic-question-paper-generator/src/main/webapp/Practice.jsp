@@ -135,7 +135,7 @@
 							<i class="fas fa-lock"></i> <input type="password" id="password"
 								name="password" placeholder="Password" required/>
 						</div>
-						<br>${message} <br> <br> <input type="submit"
+						<br><%= request.getParameter("message")%> <br> <br> <input type="submit"
 							value="Login" class="btn solid" />
 					</form>
 					<form action="" class="sign-up-form">

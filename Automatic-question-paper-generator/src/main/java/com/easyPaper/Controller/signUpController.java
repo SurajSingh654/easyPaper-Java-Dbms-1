@@ -1,7 +1,6 @@
 package com.easyPaper.Controller;
 
 import java.io.IOException;
-import java.sql.SQLException;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
