@@ -26,7 +26,7 @@
       </ul>
     </header>
     <section class="card">
-      <form>
+      <form action="paper" method="post">>
         <fieldset>
           <legend>Add Paper</legend>
           <div class="input-area">

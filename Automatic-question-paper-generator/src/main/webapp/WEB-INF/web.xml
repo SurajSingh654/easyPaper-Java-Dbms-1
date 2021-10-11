@@ -27,6 +27,12 @@
 		<description></description>
 		<servlet-class>com.easyPaper.Controller.classController</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>paperController</servlet-name>
+		<display-name>paperController</display-name>
+		<description></description>
+		<servlet-class>com.easyPaper.Controller.paperController</servlet-class>
+	</servlet>
 	<servlet-mapping>
 		<servlet-name>userController</servlet-name>
 		<url-pattern>/getUser</url-pattern>
@@ -42,6 +48,10 @@
 	<servlet-mapping>
 		<servlet-name>classController</servlet-name>
 		<url-pattern>/class</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>paperController</servlet-name>
+		<url-pattern>/paper</url-pattern>
 	</servlet-mapping>
 
 </web-app>
