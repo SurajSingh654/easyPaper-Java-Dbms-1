@@ -28,8 +28,8 @@
     <section>
       <div class="div1"><a href="addClass.jsp">Add class</a></div>
       <div class="div2"><a href="addPaper.jsp">Add paper</a></div>
-      <div class="div3"><a href="#">Class report</a></div>
-      <div class="div4"><a href="#">Paper report</a></div>
+      <div class="div3"><a href="classReport.jsp">Class report</a></div>
+      <div class="div4"><a href="paperReport.jsp">Paper report</a></div>
     </section>
 </body>
 </html>

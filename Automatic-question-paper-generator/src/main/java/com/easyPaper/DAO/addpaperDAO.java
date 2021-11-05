@@ -10,7 +10,7 @@ import jakarta.servlet.ServletException;
 
 public class addpaperDAO {
 	public int registerPaper(paperModel user) throws ClassNotFoundException, ServletException {
-		String INSERT_USERS_SQL = "INSERT INTO add_paper" + "  (pname, pdescription,pclass, user_id) VALUES "
+		String INSERT_USERS_SQL = "INSERT INTO add_paper" + "  (pname,pclass,pdescription, user_id) VALUES "
 				+ " (?, ?, ?, ?);";
 
 		int result = 0;
