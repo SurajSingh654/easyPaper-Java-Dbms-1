@@ -25,7 +25,6 @@ public class userDAO {
  
         if (result.next()) {
             user = new userModel();
-            user.setFname(result.getString("fname"));
         }
  
         con.close();
