@@ -2,6 +2,8 @@
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.Statement"%>
 <%@page import="java.sql.Connection"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
 <%
 String driver = "com.mysql.jdbc.Driver";
 String jdbcURL = "jdbc:mysql://localhost:3306/easypaper";
@@ -20,18 +22,42 @@ ResultSet resultSet = null;
 <html>
 <head>
 <title>Class Report</title>
+<meta charset="ISO-8859-1">
+<!-- Font Awesome link -->
+<script src="https://kit.fontawesome.com/7780cccd9d.js"
+	></script>
+<!-- Google Fonts Link -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" />
+<link
+	href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,300&display=swap"
+	rel="stylesheet" />
+
+<link type="text/css" rel="stylesheet" href="clasReport.css">
 </head>
 <body>
-
-<h1>Class Report</h1>
-<table border="1">
-<tr>
-<td>Class Id</td>
-<td>Class Name</td>
-<td>Class Description</td>
-
-</tr>
-<%
+<header>
+      <h3>Easy Paper</h3>
+      <ul>
+        <li>Home</li>
+        <li>AboutUs</li>
+        <li>ContactUs</li>
+        <li>Logout</li>
+      </ul>
+    </header>
+    <section class="card">
+      <form>
+        <fieldset>
+          <legend>Class Report</legend>
+          <table class="table-content">
+            <thead>
+              <th>Class Id</th>
+              <th>Title</th>
+              <th>Action</th>
+            </thead>
+            <tbody>
+              <tr>
+              <%
 try{
 connection = DriverManager.getConnection(jdbcURL, dbUser, dbPassword);
 statement=connection.createStatement();
@@ -50,7 +76,12 @@ connection.close();
 } catch (Exception e) {
 e.printStackTrace();
 }
-%>
-</table>
+%>             
+            </tbody>
+          </table>
+        </fieldset>
+      </form>
+    </section>
+
 </body>
 </html>
