@@ -1,4 +1,5 @@
- <%@page import="java.sql.DriverManager"%>
+
+<%@page import="java.sql.DriverManager"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.Statement"%>
 <%@page import="java.sql.Connection"%>
@@ -24,8 +25,7 @@ ResultSet resultSet = null;
 <title>Paper Report</title>
 <meta charset="ISO-8859-1">
 <!-- Font Awesome link -->
-<script src="https://kit.fontawesome.com/7780cccd9d.js"
-	></script>
+<script src="https://kit.fontawesome.com/7780cccd9d.js"></script>
 <!-- Google Fonts Link -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -36,71 +36,71 @@ ResultSet resultSet = null;
 <link type="text/css" rel="stylesheet" href="paperReport.css">
 </head>
 <body>
-<header>
-      <h3>Easy Paper</h3>
-      <ul>
-        <li>Home</li>
-        <li>AboutUs</li>
-        <li>ContactUs</li>
-        <li>Logout</li>
-      </ul>
-    </header>
-    <section class="card">
-      <form>
-        <fieldset>
-          <legend>Paper Report</legend>
-          <table class="table-content">
-            <thead>
-              <th>Paper Id</th>
-              <th>Paper Name</th>
-              <th>Paper Class</th>
-              <th>Question</th>
-              <th>Action</th>
-            </thead>
-            <tbody>
-       		<%
-		try {
-			connection = DriverManager.getConnection(jdbcURL, dbUser, dbPassword);
-			statement = connection.createStatement();
-			String sql = "select * from add_paper";
-			resultSet = statement.executeQuery(sql);
-			while (resultSet.next()) {
-		%>
-		<tr>
-			<td><%=resultSet.getString("paper_id")%></td>
-			<td><%=resultSet.getString("pname")%></td>
-			<td><%=resultSet.getString("pclass")%></td>
-			<td> <button class="classReportEditButton" type="submit">
-                    Add
-                  </button>
-                  <button class="classReportDeleteButton" type="submit">
-                    View
-                  </button></td>
-                  <td>  <button class="classReportEditButton" type="submit">
-                    Edit
-                  </button>
+	<header>
+		<h3>Easy Paper</h3>
+		<ul>
+			<li><a href="teacherHomePage.jsp">Home</a></li>
+			<li>ContactUs</li>
+			<li><a href="logout">Logout</a></li>
+		</ul>
+	</header>
+	<section class="card">
+		<form>
+			<fieldset>
+				<legend>Paper Report</legend>
+				<table class="table-content">
+					<thead>
+						<th>Paper Id</th>
+						<th>Paper Name</th>
+						<th>Paper Class</th>
+						<th>Question</th>
+						<th>Action</th>
+					</thead>
+					<tbody>
+						<%
+						try {
+							connection = DriverManager.getConnection(jdbcURL, dbUser, dbPassword);
+							statement = connection.createStatement();
+							String sql = "select * from add_paper";
+							resultSet = statement.executeQuery(sql);
+							while (resultSet.next()) {
+						%>
+						<tr>
+							<td><%=resultSet.getString("paper_id")%></td>
+							<td><%=resultSet.getString("pname")%></td>
+							<td><%=resultSet.getString("pclass")%></td>
+							<td>
+								<button class="classReportEditButton" type="submit">
+									Add</button>
+								<button class="classReportDeleteButton" type="submit">
+									View</button>
+							</td>
+							<td>
+								<button class="classReportEditButton" type="submit">
+									Edit</button> <a
+								href="deletePaper.jsp?paper_id=<%=resultSet.getString("paper_id")%>">
 
-                  <button class="classReportDeleteButton" type="submit">
-                    Delete
-                  </button>
-                  <button class="classReportEditButton" type="submit">
-                    Generate
-                  </button></td>
-		</tr>
-		<%
-		}
-		connection.close();
-		} catch (Exception e) {
-		e.printStackTrace();
-		}
-		%>
-             
-            </tbody>
-          </table>
-          
-        </fieldset>
-      </form>
-    </section>
+									<button class="classReportDeleteButton" type="button">
+										Delete</button>
+							</a>
+								<button class="classReportEditButton" type="submit">
+									Generate</button>
+							</td>
+						</tr>
+						<%
+						}
+						connection.close();
+						} catch (Exception e) {
+						e.printStackTrace();
+						}
+						%>
+
+					</tbody>
+				</table>
+
+			</fieldset>
+		</form>
+	</section>
 
 </body>
 </html>

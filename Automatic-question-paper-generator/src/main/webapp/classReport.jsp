@@ -10,9 +10,9 @@ String jdbcURL = "jdbc:mysql://localhost:3306/easypaper";
 String dbUser = "root";
 String dbPassword = "Antiquity@12";
 try {
-Class.forName(driver);
+	Class.forName(driver);
 } catch (ClassNotFoundException e) {
-e.printStackTrace();
+	e.printStackTrace();
 }
 Connection connection = null;
 Statement statement = null;
@@ -24,8 +24,7 @@ ResultSet resultSet = null;
 <title>Class Report</title>
 <meta charset="ISO-8859-1">
 <!-- Font Awesome link -->
-<script src="https://kit.fontawesome.com/7780cccd9d.js"
-	></script>
+<script src="https://kit.fontawesome.com/7780cccd9d.js"></script>
 <!-- Google Fonts Link -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -36,57 +35,62 @@ ResultSet resultSet = null;
 <link type="text/css" rel="stylesheet" href="clasReport.css">
 </head>
 <body>
-<header>
-      <h3>Easy Paper</h3>
-      <ul>
-        <li>Home</li>
-        <li>AboutUs</li>
-        <li>ContactUs</li>
-        <li>Logout</li>
-      </ul>
-    </header>
-    <section class="card">
-      <form>
-        <fieldset>
-          <legend>Class Report</legend>
-          <table class="table-content">
-            <thead>
-              <th>Class Id</th>
-              <th>Class</th>
-              <th>Action</th>
-            </thead>
-            <tbody>
-              <tr>
-              <%
-try{
-connection = DriverManager.getConnection(jdbcURL, dbUser, dbPassword);
-statement=connection.createStatement();
-String sql ="select * from add_class";
-resultSet = statement.executeQuery(sql);
-while(resultSet.next()){
-%>
-<tr>
-<td><%=resultSet.getString("class_id") %></td>
-<td><%=resultSet.getString("cname") %></td>
-<td> <button class="classReportEditButton" type="submit">
-                    Edit
-                  </button>
-                  <button class="classReportDeleteButton" type="submit">
-                    Delete
-                  </button></td>
-</tr>
-<%
-}
-connection.close();
-} catch (Exception e) {
-e.printStackTrace();
-}
-%>             
-            </tbody>
-          </table>
-        </fieldset>
-      </form>
-    </section>
+	<header>
+		<h3>Easy Paper</h3>
+		<ul>
+			<li><a href="teacherHomePage.jsp">Home</a></li>
+			<li>ContactUs</li>
+			<li><a href="logout">Logout</a></li>
+		</ul>
+	</header>
+	<section class="card">
+		<form>
+			<fieldset>
+				<legend>Class Report</legend>
+				<table class="table-content">
+					<thead>
+						<th>Class Id</th>
+						<th>Class</th>
+						<th>Action</th>
+					</thead>
+					<tbody>
+						<tr>
+							<%
+							try {
+								connection = DriverManager.getConnection(jdbcURL, dbUser, dbPassword);
+								statement = connection.createStatement();
+								String sql = "select * from add_class";
+								resultSet = statement.executeQuery(sql);
+								int i=0;
+								while (resultSet.next()) {
+							%>
+						
+						<tr>
+							<td><%=resultSet.getString("class_id")%></td>
+							<td><%=resultSet.getString("cname")%></td>
+							<td>
+								<button class="classReportEditButton" type="submit">
+									Edit</button> <a
+								href="deleteClass.jsp?class_id=<%=resultSet.getString("class_id")%>">
+
+									<button class="classReportDeleteButton" type="button">
+										Delete</button>
+							</a>
+							</td>
+						</tr>
+						<%
+						i++;
+						}
+						connection.close();
+						} catch (Exception e) {
+						e.printStackTrace();
+						}
+						%>
+					</tbody>
+				</table>
+			</fieldset>
+		</form>
+	</section>
 
 </body>
 </html>

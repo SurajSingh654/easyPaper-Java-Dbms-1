@@ -19,7 +19,7 @@
  <header>
       <h3>Easy Paper</h3>
       <ul>
-        <li>Home</li>
+        <li><a href="teacherHomePage.jsp">Home</a></li>
         <li>AboutUs</li>
         <li>ContactUs</li> 
         <li><a href="logout">Logout</a></li>
