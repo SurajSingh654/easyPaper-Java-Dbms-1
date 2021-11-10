@@ -52,7 +52,7 @@ ResultSet resultSet = null;
           <table class="table-content">
             <thead>
               <th>Class Id</th>
-              <th>Title</th>
+              <th>Class</th>
               <th>Action</th>
             </thead>
             <tbody>
@@ -68,7 +68,12 @@ while(resultSet.next()){
 <tr>
 <td><%=resultSet.getString("class_id") %></td>
 <td><%=resultSet.getString("cname") %></td>
-<td><%=resultSet.getString("cdescription") %></td>
+<td> <button class="classReportEditButton" type="submit">
+                    Edit
+                  </button>
+                  <button class="classReportDeleteButton" type="submit">
+                    Delete
+                  </button></td>
 </tr>
 <%
 }

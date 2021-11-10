@@ -1,7 +1,9 @@
-<%@page import="java.sql.DriverManager"%>
+ <%@page import="java.sql.DriverManager"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.Statement"%>
 <%@page import="java.sql.Connection"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
 <%
 String driver = "com.mysql.jdbc.Driver";
 String jdbcURL = "jdbc:mysql://localhost:3306/easypaper";
@@ -20,18 +22,43 @@ ResultSet resultSet = null;
 <html>
 <head>
 <title>Paper Report</title>
+<meta charset="ISO-8859-1">
+<!-- Font Awesome link -->
+<script src="https://kit.fontawesome.com/7780cccd9d.js"
+	></script>
+<!-- Google Fonts Link -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" />
+<link
+	href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,300&display=swap"
+	rel="stylesheet" />
+
+<link type="text/css" rel="stylesheet" href="paperReport.css">
 </head>
 <body>
-
-	<h1>Paper Report</h1>
-	<table border="1">
-		<tr>
-			<td>Paper Id</td>
-			<td>Paper Name</td>
-			<td>Paper Class</td>
-			<td>Paper Description</td>
-		</tr>
-		<%
+<header>
+      <h3>Easy Paper</h3>
+      <ul>
+        <li>Home</li>
+        <li>AboutUs</li>
+        <li>ContactUs</li>
+        <li>Logout</li>
+      </ul>
+    </header>
+    <section class="card">
+      <form>
+        <fieldset>
+          <legend>Paper Report</legend>
+          <table class="table-content">
+            <thead>
+              <th>Paper Id</th>
+              <th>Paper Name</th>
+              <th>Paper Class</th>
+              <th>Question</th>
+              <th>Action</th>
+            </thead>
+            <tbody>
+       		<%
 		try {
 			connection = DriverManager.getConnection(jdbcURL, dbUser, dbPassword);
 			statement = connection.createStatement();
@@ -43,7 +70,22 @@ ResultSet resultSet = null;
 			<td><%=resultSet.getString("paper_id")%></td>
 			<td><%=resultSet.getString("pname")%></td>
 			<td><%=resultSet.getString("pclass")%></td>
-			<td><%=resultSet.getString("pdescription")%></td>
+			<td> <button class="classReportEditButton" type="submit">
+                    Add
+                  </button>
+                  <button class="classReportDeleteButton" type="submit">
+                    View
+                  </button></td>
+                  <td>  <button class="classReportEditButton" type="submit">
+                    Edit
+                  </button>
+
+                  <button class="classReportDeleteButton" type="submit">
+                    Delete
+                  </button>
+                  <button class="classReportEditButton" type="submit">
+                    Generate
+                  </button></td>
 		</tr>
 		<%
 		}
@@ -52,6 +94,13 @@ ResultSet resultSet = null;
 		e.printStackTrace();
 		}
 		%>
-	</table>
+             
+            </tbody>
+          </table>
+          
+        </fieldset>
+      </form>
+    </section>
+
 </body>
 </html>
