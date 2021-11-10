@@ -34,7 +34,7 @@ public class userController extends HttpServlet {
 			if (user != null) {
 				HttpSession session = request.getSession();
 				session.setAttribute("user", user);
-				destPage = "userPage.jsp";
+				destPage = "teacherHomePage.jsp";
 			} else {
 				String message = "Invalid email/password";
 				request.setAttribute("message", message);

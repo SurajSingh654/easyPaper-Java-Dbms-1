@@ -15,6 +15,7 @@
 <link
 	href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,300&display=swap"
 	rel="stylesheet" />
+
 <link type="text/css" rel="stylesheet" href="style.css">
 
 </head>
@@ -30,7 +31,7 @@
 
 		<nav class="navigation__nav">
 			<ul class="navigation__list">
-				<li class="navigation__item"><a href="index.html"
+				<li class="navigation__item"><a href="Practice.jsp"
 					class="navigation__link">HOME</a></li>
 				<li class="navigation__item"><a href="#"
 					class="navigation__link">CONTACT US</a></li>
@@ -83,7 +84,7 @@
 						<h5 class="heading-tertiary">Question Management System</h5>
 						<p class="feature-box__text">Today people are accustomed to
 							accessing meaningful information from a huge array of sources..
-							The reality is that workplace learning happens continuously in
+							The reality is that work place learning happens continuously in
 							lot of different ways ..</p>
 					</div>
 				</div>
@@ -116,14 +117,14 @@
 		<h5 class="contact-mail u-margin-bottom-small">roysudeep1108@gmail.com</h5>
 		<address class="contact-address u-margin-bottom-small">
 			MANIT, Bhopal(Madhya Pradesh)</address>
-		<p class="copyright u-margin-bottom-small">copyright@2021</p>  
+		<p class="copyright u-margin-bottom-small">copyright@2021</p>
 	</footer>
 	<div class="popup" id="popup">
 		<div class="popup__content container">
 			<a href="" class="popup__close">&times;</a>
 			<div class="forms-container">
 				<div class="signin-signup">
-					<form action="teacherHomePage.jsp" id="signinForm" class="sign-in-form"
+					<form action="getUser" class="sign-in-form"
 						method="post">
 						<h2 class="title">Sign In</h2>
 						<div class="input-field">
@@ -134,7 +135,7 @@
 							<i class="fas fa-lock"></i> <input type="password" id="password"
 								name="password" placeholder="Password" required/>
 						</div>
-						<br>${message} <br> <br> <input type="submit"
+						<br><%= request.getParameter("message")%> <br> <br> <input type="submit"
 							value="Login" class="btn solid" />
 					</form>
 					<form action="" class="sign-up-form">
@@ -170,7 +171,7 @@
 	<div class="popup" id="popup1">
 		<div class="popup__content popup1__content">
 			<a href="" class="popup__close">&times;</a>
-			<form class="sign1-up-form">
+			<form action="signUp" method="post" class="sign1-up-form">
 				<fieldset class="sign1-up-form__fieldset">
 					<legend class="sign1-up-form__legend">SignUp-Form</legend>
 					<div class="row-signup-form">
@@ -197,11 +198,11 @@
 					<div class="row-signup-form">
 						<div class="signup-col-1-of-2">
 							<label for="address" class="signup-label">Address</label> <input
-								type="address" id="address" name="address" class="signup-input" />
+								type="text" id="address" name="address" class="signup-input" />
 						</div>
 						<div class="signup-col-1-of-2">
 							<label for="city" class="signup-label">City</label> <input
-								type="text" id="text" name="text" class="signup-input" />
+								type="text" id="city" name="city" class="signup-input" />
 						</div>
 					</div>
 					<div class="row-signup-form">
@@ -215,7 +216,7 @@
 						</div>
 					</div>
 					<a href="#popup" class="signup-submit-btn-container">
-						<h6 class="signup-submit-btn">Submit</h6>
+						<input type="Submit" value="submit" class="signup-submit-btn"/>
 					</a>
 				</fieldset>
 			</form>
