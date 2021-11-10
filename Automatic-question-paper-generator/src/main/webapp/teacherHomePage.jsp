@@ -26,7 +26,7 @@
       </ul>
     </header>
     <section>
-      <div class="div1"><a href="addCLass.jsp">Add class</a></div>
+      <div class="div1"><a href="addClass.jsp">Add class</a></div>
       <div class="div2"><a href="addPaper.jsp">Add paper</a></div>
       <div class="div3"><a href="#">Class report</a></div>
       <div class="div4"><a href="#">Paper report</a></div>
