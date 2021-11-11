@@ -19,9 +19,10 @@
     <header>
       <h3>Easy Paper</h3>
       <ul>
-        <li>Home</li>
-        <li>PrintPaper</li>
-        <li>Logout</li>
+        <li><a class="links" href="teacherHomePage.jsp">Home</a></li>
+        <li><a class="links" href="contactUs.jsp">ContactUs</a></li> 
+			<li class="links" >PrintPaper</li>
+			<li><a class="links" href="logout">Logout</a></li>
       </ul>
     </header>
     <section class="card">

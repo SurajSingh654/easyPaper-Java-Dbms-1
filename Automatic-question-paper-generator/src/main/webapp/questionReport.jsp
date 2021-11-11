@@ -37,9 +37,9 @@ ResultSet resultSet = null;
 	<header>
 		<h3>Easy Paper</h3>
 		<ul>
-			<li><a href="teacherHomePage.jsp">Home</a></li>
-			<li>ContactUs</li>
-			<li><a href="logout">Logout</a></li>
+			<li><a class="links" href="teacherHomePage.jsp">Home</a></li>
+			<li><a class="links" href="contactUs.jsp">ContactUs</a></li> 
+			<li><a class="links" href="logout">Logout</a></li>
 		</ul>
 	</header>
 	<section class="card">

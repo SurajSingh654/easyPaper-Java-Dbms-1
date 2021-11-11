@@ -20,8 +20,7 @@
       <h3>Easy Paper</h3> 
       <ul>
         <li><a href="teacherHomePage.jsp">Home</a></li>
-        <li>AboutUs</li>
-        <li>ContactUs</li> 
+        <li><a href="contactUs.jsp">ContactUs</a></li> 
         <li><a href="logout">Logout</a></li>
       </ul>
     </header>
