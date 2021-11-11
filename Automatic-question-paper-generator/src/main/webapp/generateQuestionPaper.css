@@ -102,14 +102,14 @@ legend {
   text-transform: capitalize;
   font-weight: 500;
   margin-left: 2rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.8rem;
 }
 
 .input-area {
   display: flex;
   padding-left: 2rem;
   align-items: center;
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
 }
 
 label {
@@ -127,7 +127,7 @@ textarea {
 }
 
 .availableQuestions{
-	 font-size: 1.5rem;
+	 font-size: 1.8rem;
   font-weight: 500;
   letter-spacing: 0.3rem;
   margin-left: 2rem;

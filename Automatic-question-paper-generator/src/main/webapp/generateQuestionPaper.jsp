@@ -75,6 +75,9 @@ ResultSet resultSet = null;
 						name="year" type="number"></span>
 				</div>
 				<div class="input-area">
+					<label for="maxMarks">MaxMarks:</label> <input type="number">
+				</div>
+				<div class="input-area">
 					<label for="questions">Total Questions</label>
 					<textarea name="questions" id="questions" cols="20" rows="1"></textarea>
 					<span class="availableQuestions">Available :10</span>
