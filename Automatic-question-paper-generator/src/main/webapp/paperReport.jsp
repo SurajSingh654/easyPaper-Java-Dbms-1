@@ -68,7 +68,8 @@ ResultSet resultSet = null;
 							<td><%=resultSet.getString("paper_id")%></td>
 							<td><%=resultSet.getString("pname")%></td>
 							<td><%=resultSet.getString("pclass")%></td>
-							<td><a href="updatePaper.jsp?paper_id=<%=resultSet.getString("paper_id")%>">
+							<td><a
+								href="updatePaper.jsp?paper_id=<%=resultSet.getString("paper_id")%>">
 									<button class="classReportEditButton" type="button">
 										Edit</button>
 							</a> <a
@@ -76,7 +77,8 @@ ResultSet resultSet = null;
 
 									<button class="classReportDeleteButton" type="button">
 										Delete</button>
-							</a> <a href="generateQuestionPaper.jsp">
+							</a> <a
+								href="generateQuestionPaper.jsp?paper_id=<%=resultSet.getString("paper_id")%>">
 									<button class="classReportEditButton" type="button">
 										Generate</button>
 							</a></td>
