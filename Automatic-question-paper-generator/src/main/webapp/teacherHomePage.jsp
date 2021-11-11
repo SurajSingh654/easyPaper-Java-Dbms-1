@@ -17,7 +17,7 @@
 </head>
 <body>
  <header>
-      <h3>Easy Paper</h3>
+      <h3>Easy Paper</h3> 
       <ul>
         <li><a href="teacherHomePage.jsp">Home</a></li>
         <li>AboutUs</li>

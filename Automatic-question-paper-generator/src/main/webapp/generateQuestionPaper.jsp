@@ -13,7 +13,7 @@
       href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,300&display=swap"
       rel="stylesheet"
     />
-    <link type="text/css" rel="stylesheet" href="questionPaperReport.css" />
+    <link type="text/css" rel="stylesheet" href="generateQuestionPaper.css" />
 </head>
 <body>
  <header>
