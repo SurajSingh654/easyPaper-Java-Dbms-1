@@ -30,7 +30,7 @@
         <fieldset>
           <legend>Generate Java Exam Paper for BCA</legend>
           <div class="input-area">
-            <label for="time">Total Time</label>
+            <label for="time">TotalTime:</label>
             <textarea
               name="time"
               id="time"
@@ -42,32 +42,30 @@
             <label for="year">Year:</label>
             <input type="number"></span>
             </div>
+            <div class="input-area"> <label for="maxMarks">MaxMarks:</label>
+            <input type="number">
+           </div>
             <div class="input-area">
-            <label for="questions">Total Questions</label>
-            <textarea
-              name="questions"
-              id="questions"
-              cols="20"
-              rows="1"
-            ></textarea>
+            <label for="questions">TotalQuestions:</label>
+           <input type="number">
             <span class="availableQuestions">Available :10</span>
           </div>
           <div class="input-area">
-            <label for="collegeName">CollegeName</label>
+            <label for="collegeName">CollegeName:</label>
             <textarea
               name="collegeName"
               id="collegeName"
               cols="58"
               rows="1"
             ></textarea>
-          </div>
+            </div>
           <div class="input-area">
             <label for="description">Description:</label>
             <textarea
               name="description"
               id="description"
               cols="60"
-              rows="3"
+              rows="4"
             ></textarea>
           </div>
           <div class="button_area">
