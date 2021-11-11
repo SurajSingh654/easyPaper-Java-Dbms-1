@@ -52,6 +52,7 @@ ResultSet resultSet = null;
 				</div>
 				<div class="input-area">
 					<label for="className">Select Class:</label>
+					<textarea name="className" id="className" cols="30" rows="1"></textarea>
 					<%
 					try {
 						Class.forName(driver);
