@@ -5,7 +5,6 @@ public class paperModel {
 	private String pname;
 	private String pclass;
 	private String pdescription;
-	private int user_id;
 
 	public int getPaper_id() {
 		return paper_id;
@@ -37,14 +36,6 @@ public class paperModel {
 
 	public void setPdescription(String pdescription) {
 		this.pdescription = pdescription;
-	}
-
-	public int getUser_id() {
-		return user_id;
-	}
-
-	public void setUser_id(int user_id) {
-		this.user_id = user_id;
 	}
 
 }

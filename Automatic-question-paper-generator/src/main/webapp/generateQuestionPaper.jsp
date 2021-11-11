@@ -13,16 +13,15 @@
       href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,300&display=swap"
       rel="stylesheet"
     />
-    <link type="text/css" rel="stylesheet" href="questionPaperReport.css" />
+    <link type="text/css" rel="stylesheet" href="generateQuestionPaper.css" />
 </head>
 <body>
  <header>
       <h3>Easy Paper</h3>
       <ul>
-        <li>Home</li>
-        <li>AboutUs</li>
+        <li><a href="teacherHomePage.jsp">Home</a></li>
         <li>ContactUs</li>
-        <li>Logout</li>
+        <li><a href="logout">Logout</a></li>
       </ul>
     </header>
     <section class="card">

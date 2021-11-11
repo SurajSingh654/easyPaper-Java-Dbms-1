@@ -9,7 +9,7 @@ import jakarta.servlet.ServletException;
 
 public class addclassDAO {
 	public int registerClass(classModel user) throws ClassNotFoundException, ServletException {
-		String INSERT_USERS_SQL = "INSERT INTO add_class" + "  (cname, cdescription, user_id) VALUES " + " (?, ?, ?);";
+		String INSERT_USERS_SQL = "INSERT INTO add_class" + "  (cname, cdescription) VALUES " + " (?, ?);";
 
 		int result = 0;
 		String jdbcURL = "jdbc:mysql://localhost:3306/easypaper";
@@ -22,7 +22,6 @@ public class addclassDAO {
 				PreparedStatement preparedStatement = connection.prepareStatement(INSERT_USERS_SQL)) {
 			preparedStatement.setString(1, user.getCname());
 			preparedStatement.setString(2, user.getCdescription());
-			preparedStatement.setInt(3, user.getUser_id());
 
 			System.out.println(preparedStatement);
 			// Step 3: Execute the query or update query

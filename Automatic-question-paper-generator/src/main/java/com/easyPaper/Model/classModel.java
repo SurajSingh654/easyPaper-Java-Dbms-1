@@ -4,7 +4,6 @@ public class classModel {
 	private int class_id;
 	private String cname;
 	private String cdescription;
-	private int user_id;
 	public int getClass_id() {
 		return class_id;
 	}
@@ -22,12 +21,6 @@ public class classModel {
 	}
 	public void setCdescription(String cdescription) {
 		this.cdescription = cdescription;
-	}
-	public int getUser_id() {
-		return user_id;
-	}
-	public void setUser_id(int user_id) {
-		this.user_id = user_id;
 	}
 
 }
