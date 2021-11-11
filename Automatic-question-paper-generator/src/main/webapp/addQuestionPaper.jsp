@@ -5,6 +5,7 @@
 <%@page import="java.sql.Statement"%>
 <%@page import="java.sql.Connection"%>
 <%
+String paper_id = request.getParameter("paper_id");
 String driver = "com.mysql.jdbc.Driver";
 String jdbcURL = "jdbc:mysql://localhost:3306/easypaper";
 String dbUser = "root";
@@ -45,6 +46,7 @@ ResultSet resultSet = null;
 		<form action="question" method="post">
 			<fieldset>
 				<legend>Add Question</legend>
+				<input name="paper_id" type="hidden" value=<%=paper_id%> />
 				<div class="input-area">
 					<label for="paperName">Select Paper:</label>
 					<%
@@ -52,46 +54,25 @@ ResultSet resultSet = null;
 						Class.forName(driver);
 						connection = DriverManager.getConnection(jdbcURL, dbUser, dbPassword);
 						statement = connection.createStatement();
-						String sql = "select pname from add_paper";
+						String sql = "select * from add_paper where paper_id=" + paper_id;
 						resultSet = statement.executeQuery(sql);
+					%>
+					<%
+					while (resultSet.next()) {
 					%>
 					<select name="paperName" id="paperName" required>
-						<%
-						while (resultSet.next()) {
-							String pname = resultSet.getString("pname");
-						%>
-						<option value="<%=pname%>"><%=pname%></option>
-						<%
-						}
-						%>
+						<option value="<%=resultSet.getString("pname")%>"><%=resultSet.getString("pname")%></option>
 					</select>
-					<%
-					connection.close();
-					} catch (Exception e) {
-					e.printStackTrace();
-					}
-					%>
 				</div>
 				<div class="input-area">
-					<label for="className">Select Class:</label>
-					<%
-					try {
-						Class.forName(driver);
-						connection = DriverManager.getConnection(jdbcURL, dbUser, dbPassword);
-						statement = connection.createStatement();
-						String sql = "select cname from add_class";
-						resultSet = statement.executeQuery(sql);
-					%>
-					<select name="className" id="className" required>
-						<%
-						while (resultSet.next()) {
-							String cname = resultSet.getString("cname");
-						%>
-						<option value="<%=cname%>"><%=cname%></option>
-						<%
-						}
-						%>
+					<label for="className">Select Class:</label> <select
+						name="className" id="className" required>
+						<option value="<%=resultSet.getString("pclass")%>"><%=resultSet.getString("pclass")%>
+						<option>
 					</select>
+					<%
+					}
+					%>
 					<%
 					connection.close();
 					} catch (Exception e) {

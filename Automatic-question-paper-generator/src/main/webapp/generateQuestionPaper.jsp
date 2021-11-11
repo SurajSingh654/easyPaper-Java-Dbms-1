@@ -17,6 +17,8 @@ try {
 Connection connection = null;
 Statement statement = null;
 ResultSet resultSet = null;
+Statement s = null;
+ResultSet rs = null;
 %>
 
 <!DOCTYPE html>
@@ -44,13 +46,17 @@ ResultSet resultSet = null;
 	</header>
 	<section class="card">
 		<form action="examPaper.jsp">
+			<input name="pid" type="hidden" value=<%=paper_id%> />
 			<%
 			try {
 				Class.forName(driver);
 				connection = DriverManager.getConnection(jdbcURL, dbUser, dbPassword);
 				statement = connection.createStatement();
+				s = connection.createStatement();
 				String sql = "select * from add_paper where paper_id=" + paper_id;
+				String sql1 = "select * from add_question where paper_id=" + paper_id;
 				resultSet = statement.executeQuery(sql);
+				rs = s.executeQuery(sql1);
 			%>
 			<fieldset>
 				<%
@@ -70,25 +76,38 @@ ResultSet resultSet = null;
 				<div class="input-area">
 					<label for="time">Total Time</label>
 					<textarea name="time" id="time" cols="30" rows="1"
-						placeholder="hh:mm"></textarea>
+						placeholder="hh:mm" required></textarea>
 					<span class="examYear"> <label for="year">Year:</label> <input
-						name="year" type="number"></span>
+						name="year" type="number" required></span>
 				</div>
 				<div class="input-area">
-					<label for="maxMarks">MaxMarks:</label> <input type="number">
+					<label for="maxMarks">MaxMarks:</label> <input type="number"
+						name="maxMarks" required>
 				</div>
 				<div class="input-area">
 					<label for="questions">Total Questions</label>
-					<textarea name="questions" id="questions" cols="20" rows="1"></textarea>
-					<span class="availableQuestions">Available :10</span>
+					<textarea name="questions" id="questions" cols="20" rows="1"
+						required></textarea>
+					<%
+					{
+						int i = 0;
+						while (rs.next()) {
+							i++;
+						}
+					%>
+					<span class="availableQuestions">Available :<%=i%></span>
 				</div>
+				<input name="count" type="hidden" value=<%=i%> required />
+				<%
+				}
+				%>
 				<div class="input-area">
 					<label for="collegeName">CollegeName</label>
-					<textarea name="collegeName" id="collegeName" cols="58" rows="1"></textarea>
+					<textarea name="collegeName" id="collegeName" cols="58" rows="1" required></textarea>
 				</div>
 				<div class="input-area">
 					<label for="description">Description:</label>
-					<textarea name="description" id="description" cols="60" rows="3"></textarea>
+					<textarea name="description" id="description" cols="60" rows="3" required></textarea>
 				</div>
 				<div class="button_area">
 					<div></div>

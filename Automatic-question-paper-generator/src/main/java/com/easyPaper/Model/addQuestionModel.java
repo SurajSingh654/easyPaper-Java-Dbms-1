@@ -5,6 +5,13 @@ public class addQuestionModel {
 	private String qpaper;
 	private String qclass;
 	private String question;
+	private int paper_id;
+	public int getPaper_id() {
+		return paper_id;
+	}
+	public void setPaper_id(int paper_id) {
+		this.paper_id = paper_id;
+	}
 	public int getQuestion_id() {
 		return question_id;
 	}

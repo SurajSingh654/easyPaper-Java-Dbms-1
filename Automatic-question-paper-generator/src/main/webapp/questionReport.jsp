@@ -5,6 +5,7 @@
 <%@page import="java.sql.Statement"%>
 <%@page import="java.sql.Connection"%>
 <%
+String paper_id = request.getParameter("paper_id");
 String driver = "com.mysql.jdbc.Driver";
 String jdbcURL = "jdbc:mysql://localhost:3306/easypaper";
 String dbUser = "root";
@@ -50,7 +51,6 @@ ResultSet resultSet = null;
 					<thead>
 						<th>Sr. No.</th>
 						<th>Question</th>
-						<!--  <th>Marks</th> -->
 						<th>Action</th>
 					</thead>
 					<tbody>
@@ -58,7 +58,7 @@ ResultSet resultSet = null;
 						try {
 							connection = DriverManager.getConnection(jdbcURL, dbUser, dbPassword);
 							statement = connection.createStatement();
-							String sql = "select * from add_question";
+							String sql = "select * from add_question where paper_id=" + paper_id;
 							resultSet = statement.executeQuery(sql);
 							int i = 0;
 							while (resultSet.next()) {

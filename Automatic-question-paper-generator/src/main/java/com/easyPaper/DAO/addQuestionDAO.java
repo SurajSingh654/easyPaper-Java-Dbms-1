@@ -11,7 +11,8 @@ import jakarta.servlet.ServletException;
 public class addQuestionDAO {
 
 	public int addquestion(addQuestionModel user) throws ClassNotFoundException, ServletException {
-		String INSERT_USERS_SQL = "INSERT INTO add_question" + "  (qpaper, qclass, question) VALUES " + " (?, ?, ?);";
+		String INSERT_USERS_SQL = "INSERT INTO add_question" + "  (qpaper, qclass, question,paper_id) VALUES "
+				+ " (?, ?, ?,?);";
 
 		int result = 0;
 		String jdbcURL = "jdbc:mysql://localhost:3306/easypaper";
@@ -25,6 +26,7 @@ public class addQuestionDAO {
 			preparedStatement.setString(1, user.getQpaper());
 			preparedStatement.setString(2, user.getQclass());
 			preparedStatement.setString(3, user.getQuestion());
+			preparedStatement.setInt(4, user.getPaper_id());
 
 			System.out.println(preparedStatement);
 			// Step 3: Execute the query or update query

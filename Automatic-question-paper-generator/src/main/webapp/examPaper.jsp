@@ -1,18 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%
+int paper_id = Integer.parseInt(request.getParameter("pid"));
 String time = request.getParameter("time");
+String maxMarks = request.getParameter("maxMarks");
 String year = request.getParameter("year");
-String questions = request.getParameter("questions");
+int questions = Integer.parseInt(request.getParameter("questions"));
 String collegeName = request.getParameter("collegeName");
 String description = request.getParameter("description");
+String count = request.getParameter("count");
 %>
 <%@page import="java.sql.DriverManager"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.Statement"%>
 <%@page import="java.sql.Connection"%>
 <%
-String paper_id = request.getParameter("paper_id");
 String driver = "com.mysql.jdbc.Driver";
 String jdbcURL = "jdbc:mysql://localhost:3306/easypaper";
 String dbUser = "root";
@@ -25,6 +27,8 @@ try {
 Connection connection = null;
 Statement statement = null;
 ResultSet resultSet = null;
+Statement s = null;
+ResultSet rs = null;
 %>
 <!DOCTYPE html>
 <html>
@@ -44,9 +48,9 @@ ResultSet resultSet = null;
 	<header>
 		<h3>Easy Paper</h3>
 		<ul>
-			<li>Home</li>
+			<li><a href="teacherHomePage.jsp">Home</a></li>
 			<li>PrintPaper</li>
-			<li>Logout</li>
+			<li><a href="logout">Logout</a></li>
 		</ul>
 	</header>
 	<section class="card">
@@ -64,9 +68,21 @@ ResultSet resultSet = null;
 				try {
 					connection = DriverManager.getConnection(jdbcURL, dbUser, dbPassword);
 					statement = connection.createStatement();
+					s = connection.createStatement();
 					String sql = "select * from add_paper where paper_id=" + paper_id;
+					String sql1 = "select distinct * from add_question where paper_id=" + paper_id + " order by rand() limit "
+					+ questions;
+
 					resultSet = statement.executeQuery(sql);
+					rs = s.executeQuery(sql1);
+					/*while(rs.next())
+					{
+						System.out.println(rs.getString("question"));
+						
+					}*/
+
 					while (resultSet.next()) {
+						String pname = resultSet.getString("pname");
 				%>
 				<h3><%=resultSet.getString("pname")%></h3>
 				<%
@@ -79,7 +95,11 @@ ResultSet resultSet = null;
 				Time:
 				<%=time%>
 			</h3>
-			<h3 class="maximumMarks">MM: 50 marks</h3>
+			<h3 class="maximumMarks">
+				MM:
+				<%=maxMarks%>
+				marks
+			</h3>
 		</div>
 
 		<div class="div3">
@@ -89,24 +109,20 @@ ResultSet resultSet = null;
 				</h3>
 			</div>
 			<table class="table-content">
+				<%
+				int i = 1;
+				while (rs.next()) {
+				%>
 				<tbody>
 					<tr>
-						<td>Q.1</td>
-						<td>What is Java?</td>
-					</tr>
-					<tr>
-						<td>Q.2</td>
-						<td>What is Access Modifier in Java?</td>
-					</tr>
-					<tr>
-						<td>Q.3</td>
-						<td>What is Operator overloading in java?</td>
-					</tr>
-					<tr>
-						<td>Q.4</td>
-						<td>What is Generic functions?</td>
+						<td>Q.<%=i%></td>
+						<td><%=rs.getString("question")%></td>
 					</tr>
 				</tbody>
+				<%
+				i++;
+				}
+				%>
 			</table>
 		</div>
 	</section>
@@ -115,7 +131,7 @@ ResultSet resultSet = null;
 	} catch (
 
 	Exception e) {
-	e.printStackTrace();
+	System.out.println(e.getMessage());
 	}
 	%>
 </body>

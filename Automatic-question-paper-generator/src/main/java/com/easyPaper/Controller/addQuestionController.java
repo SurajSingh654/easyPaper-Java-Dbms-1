@@ -22,11 +22,13 @@ public class addQuestionController extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-
+       
+    	int paper_id = Integer.parseInt(request.getParameter("paper_id"));
         String qpaper = request.getParameter("paperName");
         String qclass = request.getParameter("className");
         String ques = request.getParameter("Description");
         addQuestionModel user = new addQuestionModel();
+        user.setPaper_id(paper_id);
         user.setQpaper(qpaper);
         user.setQclass(qclass);
         user.setQuestion(ques);
@@ -41,7 +43,7 @@ public class addQuestionController extends HttpServlet {
 		PrintWriter out = response.getWriter();
         out.println("<script type=\"text/javascript\">");
         out.println("alert('Question Added Successfully');");
-        out.println("location='teacherHomePage.jsp';");
+        out.println("location='paperReport.jsp';");
         out.println("</script>");
     }
 }
