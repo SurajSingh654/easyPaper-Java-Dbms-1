@@ -1,7 +1,5 @@
 @charset "ISO-8859-1";
 
-@charset "ISO-8859-1";
-
 *, *::before, *::after {
 	margin: 0;
 	padding: 0;
@@ -76,7 +74,7 @@ header ul li {
 
 .card {
 	width: 60%;
-	height: auto;
+	height: 90%;
 	background-color: rgba(151, 160, 172, 0.9);
 	margin: 0 auto;
 	border-radius: 2rem;
@@ -94,7 +92,7 @@ form {
 
 fieldset {
 	width: 90%;
-	height: 90%;
+	height: 98%;
 	margin: 0 auto;
 	/* background-color: rgb(172, 30, 30); */
 }
@@ -105,16 +103,36 @@ legend {
 	text-transform: capitalize;
 	font-weight: 500;
 	margin-left: 2rem;
-	margin-bottom: 1rem;
+	margin-bottom: 0.2rem;
 }
 
-.input-area {
-	display: flex;
-	padding-left: 2rem;
-	align-items: center;
-	margin-bottom: 4rem;
+.table-content {
+	/* position: relative; */
+	overflow: scroll;
+	width: 95%;
+	margin: 1rem 0;
+	font-size: 0.9rem;
+	border-collapse: collapse;
 }
 
+/* .table-content thead tr {
+  position: sticky;
+  background-color: rgb(37, 34, 34);
+  color: rgb(150, 134, 134);
+  text-align: left;
+  font-weight: bold;
+} */
+.table-content td {
+	padding: 1rem 1rem;
+	font-size: 2.4rem;
+}
+
+/* .input-area {
+  display: flex;
+  padding-left: 2rem;
+  align-items: center;
+  margin-bottom: 4rem;
+} */
 label {
 	font-size: 1.8rem;
 	letter-spacing: 0.3rem;
@@ -128,10 +146,7 @@ textarea {
 	padding-left: 0.4rem;
 	padding-top: 0.4rem;
 	color: rgb(0, 19, 128);
-}
-
-select {
-	width: 42%;
+	text-transform: uppercase;
 }
 
 .button_area {

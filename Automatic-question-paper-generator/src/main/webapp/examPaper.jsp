@@ -45,6 +45,31 @@ ResultSet rs = null;
 <link type="text/css" rel="stylesheet" href="examPaper.css" />
 </head>
 <body>
+<<<<<<< HEAD
+    <header>
+      <h3>Easy Paper</h3>
+      <ul>
+        <li><a class="links" href="teacherHomePage.jsp">Home</a></li>
+        <li><a class="links" href="contactUs.jsp">ContactUs</a></li> 
+			<li class="links" >PrintPaper</li>
+			<li><a class="links" href="logout">Logout</a></li>
+      </ul>
+    </header>
+    <section class="card">
+      <div class="div1">
+        <div class="subDiv1">
+          <h3>Maulana Azad National Institute of technology, Bhopal</h3>
+        </div>
+        <div class="subDiv2"><h3>End Term Examination-2021</h3></div>
+        <div class="subDiv3">
+          <h3>JAVA</h3>
+        </div>
+      </div>
+      <div class="div2">
+        <h3 class="totalTime">Time: 3 hrs 30 min</h3>
+        <h3 class="maximumMarks">MM: 50 marks</h3>
+      </div>
+=======
 	<header>
 		<h3>Easy Paper</h3>
 		<ul>
@@ -72,6 +97,7 @@ ResultSet rs = null;
 					String sql = "select * from add_paper where paper_id=" + paper_id;
 					String sql1 = "select distinct * from add_question where paper_id=" + paper_id + " order by rand() limit "
 					+ questions;
+>>>>>>> branch 'main' of https://github.com/waryphantom/easyPaper-Java-Dbms.git
 
 					resultSet = statement.executeQuery(sql);
 					rs = s.executeQuery(sql1);
