@@ -64,12 +64,15 @@ header ul {
 header ul li {
 	list-style: none;
 }
-
 .links {
 	text-decoration: none;
 	color: rgba(50, 11, 112, 0.712);
 	font-size: 2rem;
-	font-weight: 500;
+	font-weight: bold;
+	letter-spacing: 0.3rem;
+}
+.links:hover {
+	color: rgba(216,229,233,0.8);
 }
 
 .card {

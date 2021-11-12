@@ -17,13 +17,9 @@
 <body>
 	<header>
 		<h3>Easy Paper</h3>
-		<ul>
-			<li><a class="links" href="teacherHomePage.jsp">Home</a></li>
-			<li><a class="links" href="logout">Logout</a></li>
-		</ul>
 	</header>
 	<section class="card">
-		<form>
+		<form action="contactUs" method="post">
 			<fieldset>
 				<legend>Contact Us</legend>
 				<table class="table-content">
@@ -42,9 +38,7 @@
 						</tr>
 						<tr>
 							<td><i class="fas fa-comments"></i></td>
-							<td><textarea autofocus name="feed" cols="50" rows="5"
-									placeholder="Give your feedback.....">
-                  Your feedback...
+							<td><textarea autofocus name="feed" cols="50" rows="5">
                   </textarea></td>
 						</tr>
 					</tbody>

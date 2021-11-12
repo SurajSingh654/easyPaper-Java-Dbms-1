@@ -33,7 +33,7 @@
 			<ul class="navigation__list">
 				<li class="navigation__item"><a href="Practice.jsp"
 					class="navigation__link">HOME</a></li>
-				<li class="navigation__item"><a href="#"
+				<li class="navigation__item"><a href="contactUs.jsp"
 					class="navigation__link">CONTACT US</a></li>
 				<li class="navigation__item"><a href="#popup"
 					class="navigation__link">SIGN IN</a></li>

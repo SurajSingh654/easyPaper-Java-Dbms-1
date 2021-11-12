@@ -36,74 +36,12 @@ ResultSet rs = null;
 <link type="text/css" rel="stylesheet" href="generateQuestionPaper.css" />
 </head>
 <body>
-<<<<<<< HEAD
- <header>
-      <h3>Easy Paper</h3>
-      <ul>
-        <li><a class="links" href="teacherHomePage.jsp">Home</a></li>
-			<li><a class="links" href="contactUs.jsp">ContactUs</a></li> 
-			<li><a class="links" href="logout">Logout</a></li>
-      </ul>
-    </header>
-    <section class="card">
-      <form>
-        <fieldset>
-          <legend>Generate Java Exam Paper for BCA</legend>
-          <div class="input-area">
-            <label for="time">TotalTime:</label>
-            <textarea
-              name="time"
-              id="time"
-              cols="30"
-              rows="1"
-              placeholder="hh:mm"
-            ></textarea>
-            <span class="examYear">
-            <label for="year">Year:</label>
-            <input type="number"></span>
-            </div>
-            <div class="input-area"> <label for="maxMarks">MaxMarks:</label>
-            <input type="number">
-           </div>
-            <div class="input-area">
-            <label for="questions">TotalQuestions:</label>
-           <input type="number">
-            <span class="availableQuestions">Available :10</span>
-          </div>
-          <div class="input-area">
-            <label for="collegeName">CollegeName:</label>
-            <textarea
-              name="collegeName"
-              id="collegeName"
-              cols="58"
-              rows="1"
-            ></textarea>
-            </div>
-          <div class="input-area">
-            <label for="description">Description:</label>
-            <textarea
-              name="description"
-              id="description"
-              cols="60"
-              rows="4"
-            ></textarea>
-          </div>
-          <div class="button_area">
-            <div></div>
-            <input type="reset" value="Reset" />
-            <input type="submit" value="Submit" />
-            <div></div>
-          </div>
-        </fieldset>
-      </form>
-    </section>
-=======
 	<header>
 		<h3>Easy Paper</h3>
 		<ul>
-			<li><a href="teacherHomePage.jsp">Home</a></li>
-			<li>ContactUs</li>
-			<li><a href="logout">Logout</a></li>
+			<li><a class="links" href="teacherHomePage.jsp">Home</a></li>
+			<li><a class="links" href="contactUs.jsp">ContactUs</a></li>
+			<li><a class="links" href="logout">Logout</a></li>
 		</ul>
 	</header>
 	<section class="card">
@@ -165,11 +103,13 @@ ResultSet rs = null;
 				%>
 				<div class="input-area">
 					<label for="collegeName">CollegeName</label>
-					<textarea name="collegeName" id="collegeName" cols="58" rows="1" required></textarea>
+					<textarea name="collegeName" id="collegeName" cols="58" rows="1"
+						required></textarea>
 				</div>
 				<div class="input-area">
 					<label for="description">Description:</label>
-					<textarea name="description" id="description" cols="60" rows="3" required></textarea>
+					<textarea name="description" id="description" cols="60" rows="3"
+						required></textarea>
 				</div>
 				<div class="button_area">
 					<div></div>
@@ -186,6 +126,5 @@ ResultSet rs = null;
 		}
 		%>
 	</section>
->>>>>>> branch 'main' of https://github.com/waryphantom/easyPaper-Java-Dbms.git
 </body>
 </html>

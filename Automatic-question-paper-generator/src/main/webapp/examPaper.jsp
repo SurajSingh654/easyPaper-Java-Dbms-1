@@ -43,42 +43,19 @@ ResultSet rs = null;
 	href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,300&display=swap"
 	rel="stylesheet" />
 <link type="text/css" rel="stylesheet" href="examPaper.css" />
+<link type="text/css" rel="stylesheet" media="print" href="print.css" />
 </head>
 <body>
-<<<<<<< HEAD
-    <header>
-      <h3>Easy Paper</h3>
-      <ul>
-        <li><a class="links" href="teacherHomePage.jsp">Home</a></li>
-        <li><a class="links" href="contactUs.jsp">ContactUs</a></li> 
-			<li class="links" >PrintPaper</li>
-			<li><a class="links" href="logout">Logout</a></li>
-      </ul>
-    </header>
-    <section class="card">
-      <div class="div1">
-        <div class="subDiv1">
-          <h3>Maulana Azad National Institute of technology, Bhopal</h3>
-        </div>
-        <div class="subDiv2"><h3>End Term Examination-2021</h3></div>
-        <div class="subDiv3">
-          <h3>JAVA</h3>
-        </div>
-      </div>
-      <div class="div2">
-        <h3 class="totalTime">Time: 3 hrs 30 min</h3>
-        <h3 class="maximumMarks">MM: 50 marks</h3>
-      </div>
-=======
 	<header>
 		<h3>Easy Paper</h3>
 		<ul>
-			<li><a href="teacherHomePage.jsp">Home</a></li>
-			<li><button name="printPaper" onClick="Print()">PrintPaper</button></li>
-			<li><a href="logout">Logout</a></li>
+			<li><a class="links" href="teacherHomePage.jsp">Home</a></li>
+			<li><button class="classReportEditButton" name="printPaper"
+					onClick="Print()">PrintPaper</button></li>
+			<li><a class="links" href="logout">Logout</a></li>
 		</ul>
 	</header>
-	<section class="card" id="card">
+	<section class="card" id="card1">
 		<div class="div1">
 			<div class="subDiv1">
 				<h3><%=collegeName%>
@@ -97,7 +74,6 @@ ResultSet rs = null;
 					String sql = "select * from add_paper where paper_id=" + paper_id;
 					String sql1 = "select distinct * from add_question where paper_id=" + paper_id + " order by rand() limit "
 					+ questions;
->>>>>>> branch 'main' of https://github.com/waryphantom/easyPaper-Java-Dbms.git
 
 					resultSet = statement.executeQuery(sql);
 					rs = s.executeQuery(sql1);
@@ -154,9 +130,7 @@ ResultSet rs = null;
 	</section>
 	<%
 	connection.close();
-	} catch (
-
-	Exception e) {
+	} catch (Exception e) {
 	System.out.println(e.getMessage());
 	}
 	%>
@@ -164,15 +138,15 @@ ResultSet rs = null;
 		function Print() {
 			var mywindow = window.open('', 'PRINT', 'height=400,width=600');
 			//mywindow.document
-				//	.write('<link rel="preconnect" href="https://fonts.googleapis.com" />');
+			//	.write('<link rel="preconnect" href="https://fonts.googleapis.com" />');
 			//mywindow.document.write('
 			//<link rel="preconnect" href="https://fonts.gstatic.com" />');
 			//mywindow.document.write('<link
-				//href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,300&display=swap"
-				//rel="stylesheet" />');
+			//href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,300&display=swap"
+			//rel="stylesheet" />');
 			mywindow.document
-					.write('<link type="text/css" rel="stylesheet" href="examPaper.css" />');
-			mywindow.document.write(document.getElementById('card').innerHTML);
+					.write('<link type="text/css" rel="stylesheet" media="print" href=print.css" />');
+			mywindow.document.write(document.getElementById('card1').innerHTML);
 
 			mywindow.document.close(); // necessary for IE >= 10
 			mywindow.focus(); // necessary for IE >= 10*/
