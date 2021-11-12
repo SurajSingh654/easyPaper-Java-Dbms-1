@@ -10,8 +10,7 @@ import jakarta.servlet.ServletException;
 
 public class addpaperDAO {
 	public int registerPaper(paperModel user) throws ClassNotFoundException, ServletException {
-		String INSERT_USERS_SQL = "INSERT INTO add_paper" + "  (pname,pclass,pdescription, user_id) VALUES "
-				+ " (?, ?, ?, ?);";
+		String INSERT_USERS_SQL = "INSERT INTO add_paper" + "  (pname,pclass,pdescription) VALUES " + " (?, ?, ?);";
 
 		int result = 0;
 		String jdbcURL = "jdbc:mysql://localhost:3306/easypaper";
@@ -25,7 +24,6 @@ public class addpaperDAO {
 			preparedStatement.setString(1, user.getPname());
 			preparedStatement.setString(2, user.getPclass());
 			preparedStatement.setString(3, user.getPdescription());
-			preparedStatement.setInt(4, user.getUser_id());
 
 			System.out.println(preparedStatement);
 			// Step 3: Execute the query or update query

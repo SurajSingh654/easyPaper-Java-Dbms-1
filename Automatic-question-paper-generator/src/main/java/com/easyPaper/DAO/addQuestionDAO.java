@@ -4,12 +4,15 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 
-import com.easyPaper.Model.classModel;
+import com.easyPaper.Model.addQuestionModel;
+
 import jakarta.servlet.ServletException;
 
-public class addclassDAO {
-	public int registerClass(classModel user) throws ClassNotFoundException, ServletException {
-		String INSERT_USERS_SQL = "INSERT INTO add_class" + "  (cname, cdescription) VALUES " + " (?, ?);";
+public class addQuestionDAO {
+
+	public int addquestion(addQuestionModel user) throws ClassNotFoundException, ServletException {
+		String INSERT_USERS_SQL = "INSERT INTO add_question" + "  (qpaper, qclass, question,paper_id) VALUES "
+				+ " (?, ?, ?,?);";
 
 		int result = 0;
 		String jdbcURL = "jdbc:mysql://localhost:3306/easypaper";
@@ -20,8 +23,10 @@ public class addclassDAO {
 
 				// Step 2:Create a statement using connection object
 				PreparedStatement preparedStatement = connection.prepareStatement(INSERT_USERS_SQL)) {
-			preparedStatement.setString(1, user.getCname());
-			preparedStatement.setString(2, user.getCdescription());
+			preparedStatement.setString(1, user.getQpaper());
+			preparedStatement.setString(2, user.getQclass());
+			preparedStatement.setString(3, user.getQuestion());
+			preparedStatement.setInt(4, user.getPaper_id());
 
 			System.out.println(preparedStatement);
 			// Step 3: Execute the query or update query
@@ -33,5 +38,4 @@ public class addclassDAO {
 		}
 		return result;
 	}
-
 }

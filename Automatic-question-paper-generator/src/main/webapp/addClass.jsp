@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>TeacherHomePage</title>
+<title>AddClass</title>
 <script src="https://kit.fontawesome.com/7780cccd9d.js"></script>
 <!-- Google Fonts Link -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />

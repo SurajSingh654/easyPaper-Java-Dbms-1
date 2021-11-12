@@ -22,7 +22,7 @@ ResultSet resultSet = null;
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>TeacherHomePage</title>
+<title>Addpaper</title>
 <script src="https://kit.fontawesome.com/7780cccd9d.js"></script>
 <!-- Google Fonts Link -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -37,7 +37,7 @@ ResultSet resultSet = null;
 		<h3>Easy Paper</h3>
 		<ul>
 			<li><a class="links" href="teacherHomePage.jsp">Home</a></li>
-			<li><a class="links" href="contactUs.jsp">ContactUs</a></li> 
+			<li><a class="links" href="contactUs.jsp">ContactUs</a></li>
 			<li><a class="links" href="logout">Logout</a></li>
 		</ul>
 	</header>

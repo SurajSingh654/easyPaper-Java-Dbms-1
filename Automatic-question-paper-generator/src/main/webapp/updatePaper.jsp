@@ -17,13 +17,15 @@ try {
 }
 Connection connection = null;
 Statement statement = null;
+Statement statement1 = null;
 ResultSet resultSet = null;
+ResultSet rs = null;
 %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Add Question Paper</title>
+<title>TeacherHomePage</title>
 <script src="https://kit.fontawesome.com/7780cccd9d.js"></script>
 <!-- Google Fonts Link -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -31,65 +33,75 @@ ResultSet resultSet = null;
 <link
 	href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,300&display=swap"
 	rel="stylesheet" />
-<link type="text/css" rel="stylesheet" href="addQuestionPaper.css" />
+<link type="text/css" rel="stylesheet" href="style2.css" />
 </head>
 <body>
 	<header>
 		<h3>Easy Paper</h3>
 		<ul>
-			<li><a class="links" href="teacherHomePage.jsp">Home</a></li>
-			<li><a class="links" href="contactUs.jsp">ContactUs</a></li> 
-			<li><a class="links" href="logout">Logout</a></li>
+			<li><a href="teacherHomePage.jsp">Home</a></li>
+			<li>ContactUs</li>
+			<li><a href="logout">Logout</a></li>
 		</ul>
 	</header>
 	<section class="card">
-		<form action="question" method="post">
+		<form action="updatePaperProcess.jsp?paper_id=<%=paper_id%>"
+			method="post">
+
 			<fieldset>
-				<legend>Add Question</legend>
-				<input name="paper_id" type="hidden" value=<%=paper_id%> />
+				<legend>Add Paper</legend>
+				<%
+				try {
+					Class.forName(driver);
+					connection = DriverManager.getConnection(jdbcURL, dbUser, dbPassword);
+					statement = connection.createStatement();
+					statement1 = connection.createStatement();
+					String sql = "select cname from add_class";
+					String sql1 = "select * from add_paper where paper_id=" + paper_id;
+					resultSet = statement.executeQuery(sql);
+					rs = statement1.executeQuery(sql1);
+				%>
 				<div class="input-area">
-					<label for="paperName">Select Paper:</label>
 					<%
-					try {
-						Class.forName(driver);
-						connection = DriverManager.getConnection(jdbcURL, dbUser, dbPassword);
-						statement = connection.createStatement();
-						String sql = "select * from add_paper where paper_id=" + paper_id;
-						resultSet = statement.executeQuery(sql);
+					while (rs.next()) {
+						String pname = rs.getString("pname");
+						String pdescription = rs.getString("pdescription");
 					%>
-					<%
-					while (resultSet.next()) {
-					%>
-					<select name="paperName" id="paperName" required>
-						<option value="<%=resultSet.getString("pname")%>"><%=resultSet.getString("pname")%></option>
-					</select>
+					<label for="paperName">Paper Name:</label>
+					<textarea name="paperName" id="paperName" cols="30" rows="1"><%=rs.getString("pname")%></textarea>
 				</div>
 				<div class="input-area">
 					<label for="className">Select Class:</label> <select
 						name="className" id="className" required>
-						<option value="<%=resultSet.getString("pclass")%>"><%=resultSet.getString("pclass")%>
-						<option>
+						<%
+						while (resultSet.next()) {
+							String cname = resultSet.getString("cname");
+						%>
+						<option value="<%=cname%>"><%=cname%></option>
+						<%
+						}
+						%>
 					</select>
-					<%
-					}
-					%>
-					<%
-					connection.close();
-					} catch (Exception e) {
-					e.printStackTrace();
-					}
-					%>
 				</div>
 				<div class="input-area">
-					<label for="Description">Question:</label>
-					<textarea name="Description" id="Description" cols="30" rows="8"></textarea>
+					<label for="Description">Description:</label>
+					<textarea name="Description" id="Description" cols="30" rows="8"><%=rs.getString("pdescription")%></textarea>
 				</div>
+				<%
+				}
+				%>
 				<div class="button_area">
 					<div></div>
 					<input type="reset" value="Reset" /> <input type="submit"
 						value="Submit" />
 					<div></div>
 				</div>
+				<%
+				connection.close();
+				} catch (Exception e) {
+				e.printStackTrace();
+				}
+				%>
 			</fieldset>
 		</form>
 	</section>
