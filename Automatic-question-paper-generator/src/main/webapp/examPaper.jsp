@@ -49,11 +49,11 @@ ResultSet rs = null;
 		<h3>Easy Paper</h3>
 		<ul>
 			<li><a href="teacherHomePage.jsp">Home</a></li>
-			<li>PrintPaper</li>
+			<li><button name="printPaper" onClick="Print()">PrintPaper</button></li>
 			<li><a href="logout">Logout</a></li>
 		</ul>
 	</header>
-	<section class="card">
+	<section class="card" id="card">
 		<div class="div1">
 			<div class="subDiv1">
 				<h3><%=collegeName%>
@@ -134,5 +134,28 @@ ResultSet rs = null;
 	System.out.println(e.getMessage());
 	}
 	%>
+	<script>
+		function Print() {
+			var mywindow = window.open('', 'PRINT', 'height=400,width=600');
+			//mywindow.document
+				//	.write('<link rel="preconnect" href="https://fonts.googleapis.com" />');
+			//mywindow.document.write('
+			//<link rel="preconnect" href="https://fonts.gstatic.com" />');
+			//mywindow.document.write('<link
+				//href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,300&display=swap"
+				//rel="stylesheet" />');
+			mywindow.document
+					.write('<link type="text/css" rel="stylesheet" href="examPaper.css" />');
+			mywindow.document.write(document.getElementById('card').innerHTML);
+
+			mywindow.document.close(); // necessary for IE >= 10
+			mywindow.focus(); // necessary for IE >= 10*/
+
+			mywindow.print();
+			mywindow.close();
+
+			return true;
+		}
+	</script>
 </body>
 </html>
